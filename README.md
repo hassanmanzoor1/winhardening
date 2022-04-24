@@ -1,8 +1,6 @@
-
-### Automated Install:
-Use this one-liner to automatically download, unzip all supporting files, and run the latest version of the script.
-```powershell
-iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeandharden.ps1'|iex
+The script must be launched from an administrative powershell in the directory containing all the files from the GitHub Repository
 ```
-
-
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
+Get-ChildItem -Recurse *.ps1 | Unblock-File
+.\sos-optimize-windows.ps1
+```
